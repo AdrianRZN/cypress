@@ -1,5 +1,6 @@
 it('should display validation when login with blank fields', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/');
+    cy.waitForDom();
   
     
     cy.get("button[type='submit']").click();

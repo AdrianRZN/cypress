@@ -5,6 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 it('should log out and redirect to login page', () => {
     
     cy.visit('https://opensource-demo.orangehrmlive.com/');
+    cy.waitForDom();
     cy.get("[name='username']").type("Admin");
     cy.get("[name='password']").type("admin123");
     cy.get("button[type='submit']").click();

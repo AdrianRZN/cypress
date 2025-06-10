@@ -23,3 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('waitForDom', () => {
+  cy.document().should('have.property', 'readyState').and('eq', 'complete');
+});
